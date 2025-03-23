@@ -1,0 +1,7 @@
+.cart-widget {
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
