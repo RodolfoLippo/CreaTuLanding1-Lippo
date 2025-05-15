@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ItemListContainer from "./components/item_list_container";
-import ItemDetailContainer from "./components/item_detail_container";
-import Contacto from "./components/contacto";
-import Cart from "./components/cart";
-import CheckoutForm from "./components/check_out_form";
-import NotFound from "./components/not_found";
+import ItemListContainer from "./components/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer";
+import Contacto from "./components/Contacto";
+import Cart from "./components/Cart";
+import CheckoutForm from "./components/CheckOutForm";
+import NotFound from "./components/NotFound";
 import NavBar from "./components/NavBar";
 
 function App() {
