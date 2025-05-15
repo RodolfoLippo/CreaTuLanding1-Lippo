@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
-import { CartContext } from "../context/CartContext";
-import ItemCount from "./ItemCount";
+import { CartContext } from "../context/cart_context";
+import ItemCount from "./item_count";
 
 const ItemDetail = ({ producto }) => {
   const { agregarAlCarrito } = useContext(CartContext);
