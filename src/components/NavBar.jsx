@@ -7,9 +7,12 @@ const NavBar = () => {
   return (
     <nav className="navbar">
       <div className="logo-container">
-        <img src={logo} alt="CasAnt Logo" className="logo" />
-        <h1 className="logo-text">CasAnt</h1>
+        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+          <img src={logo} alt="CasAnt Logo" className="logo" />
+          <h1 className="logo-text">CasAnt</h1>
+        </Link>
       </div>
+
       <ul className="nav-links">
         <li><Link to="/">Inicio</Link></li>
 
@@ -19,11 +22,13 @@ const NavBar = () => {
             <Link to="/categoria/hormigueros">Hormigueros</Link>
             <Link to="/categoria/colonias">Colonias</Link>
             <Link to="/categoria/accesorios">Accesorios</Link>
+            <Link to="/categoria/alimento">Alimento</Link>
           </div>
         </li>
 
         <li><Link to="/contacto">Contacto</Link></li>
       </ul>
+
       <CartWidget />
     </nav>
   );

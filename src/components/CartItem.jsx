@@ -6,6 +6,8 @@ const CartWidget = () => {
   const { cantidadTotal } = useContext(CartContext);
   const total = cantidadTotal();
 
+  if (total === 0) return null;
+
   return (
     <Link to="/cart" className="cart-widget" style={{ textDecoration: "none", color: "inherit" }}>
       🛒 <span>{total}</span>
