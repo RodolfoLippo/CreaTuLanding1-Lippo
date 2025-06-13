@@ -36,6 +36,7 @@ export const CartProvider = ({ children }) => {
     <CartContext.Provider
       value={{
         carrito,
+        setCarrito, // ✅ Esta línea habilita modificar directamente el carrito desde otros componentes
         agregarAlCarrito,
         vaciarCarrito,
         totalCarrito,

@@ -19,7 +19,6 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<CheckoutForm />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/cart" element={<Cart />} />
       </Routes>
     </BrowserRouter>
   );

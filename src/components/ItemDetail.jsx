@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import ItemCount from "./ItemCount";
+import Swal from "sweetalert2";
 
 const ItemDetail = ({ producto }) => {
   const { agregarAlCarrito } = useContext(CartContext);
@@ -9,11 +10,18 @@ const ItemDetail = ({ producto }) => {
   const handleAdd = (cantidad) => {
     agregarAlCarrito(producto, cantidad);
     setAgregado(true);
+
+    Swal.fire({
+      icon: "success",
+      title: "Producto agregado",
+      showConfirmButton: false,
+      timer: 1000,
+    });
   };
 
   return (
     <div className="item-detail">
-      <img src={producto.imagen} alt={producto.nombre} width="200" />
+      <img src={producto.imagen || "https://via.placeholder.com/200"} alt={producto.nombre} width="200" />
       <h2>{producto.nombre}</h2>
       <p>{producto.descripcion}</p>
       <p>Precio: €{producto.precio}</p>

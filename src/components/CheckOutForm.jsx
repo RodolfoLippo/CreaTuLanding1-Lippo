@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../config/firebase";
+import Swal from "sweetalert2";
 
 const CheckoutForm = () => {
   const { carrito, totalCarrito, vaciarCarrito } = useContext(CartContext);
@@ -33,6 +34,12 @@ const CheckoutForm = () => {
       setOrderId(ordenRef.id);
       vaciarCarrito();
       setError("");
+
+      Swal.fire({
+        icon: "success",
+        title: "¡Compra realizada!",
+        text: `Tu número de orden es: ${ordenRef.id}`,
+      });
     } catch (error) {
       console.error("Error al generar la orden:", error);
       setError("Ocurrió un error al generar la orden. Intenta nuevamente.");
@@ -62,10 +69,12 @@ const CheckoutForm = () => {
           required
         />
         <input
-          type="tel"
+          type="text"
           placeholder="Teléfono"
           value={telefono}
           onChange={(e) => setTelefono(e.target.value)}
+          pattern="^[0-9]{7,15}$"
+          title="Introduce solo números (mínimo 7 dígitos)"
           required
         />
         <input
